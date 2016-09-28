@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+
+<h:head>
+    <title>Practica 9</title>
+    <meta name="Edward Romero Espinal" content="practica 9 programacion web avanzada"></meta>
+</h:head>
+<!-- Add 50px padding top to the body for the navbar -->
+<h:body style="padding-top: 50px; padding-bottom: 20px;">
+<b:navBar brand="Brand" brandHref="#" inverse="true" fixed="top">
+    <b:navbarLinks>
+        <b:navLink value="Link" href="#"></b:navLink>
+        <b:navLink value="Link" href="#"></b:navLink>
+        <b:dropMenu value="Dropdown">
+            <b:navLink value="Action" href="#"></b:navLink>
+            <b:navLink value="Another action" href="#"></b:navLink>
+            <b:navLink value="Something else here" href="#"></b:navLink>
+            <b:navLink></b:navLink>
+            <b:navLink header="Nav header"></b:navLink>
+            <b:navLink value="Separated link" href="#"></b:navLink>
+            <b:navLink value="One more separated link" href="#"></b:navLink>
+        </b:dropMenu>
+    </b:navbarLinks>
+    <h:form styleClass="navbar-form navbar-right">
+        <div class="form-group">
+            <b:inputText placeholder="Nombre de Usuario" fieldSize="sm"/>
+            <!--input type="text" class="form-control" placeholder="Search"/-->
+        </div>
+        <div class="form-group">
+            <b:inputText placeholder="Contrasena" fieldSize="sm"/>
+        </div>
+        #{' '}
+        <b:commandButton action="a" value="Sign in" look="success" icon="chevron-right" iconAlign="right"/>
+    </h:form>
+</b:navBar>
+    <h:form>
+        <b:inputText id="username" value="#{loginForm.username}" label="Username: ">
+            <f:facet name="prepend">
+                <b:icon name="user"></b:icon>
+            </f:facet>
+        </b:inputText>
+    </h:form>
+</h:body>
+</html>

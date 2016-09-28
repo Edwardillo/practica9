@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<f:view locale="#{formCambioIdioma.idiomaSeleccion}">
+<h:head>
+    <title>Practica 9</title>
+    <meta name="Edward Romero Espinal" content="practica 9 programacion web avanzada"></meta>
+</h:head>
+<!-- Add 50px padding top to the body for the navbar -->
+<h:body style="padding-top: 50px; padding-bottom: 20px;">
+    <b:navBar brand="Brand" brandHref="#" inverse="true" fixed="top">
+        <b:navbarLinks>
+            <h:form>
+                <h:selectOneMenu  value="#{formCambioIdioma.idiomaSeleccion}"
+                                  valueChangeListener="#{formCambioIdioma.cambiarIdioma}" onchange="submit();" >
+                    <f:selectItems value="#{formCambioIdioma.getListaIdiomas()}" />
+                </h:selectOneMenu>
+            </h:form>
+        </b:navbarLinks>
+        <h:form styleClass="navbar-form navbar-right">
+            #{' '}
+            <b:commandButton action="/createuser" value="Register" look="success" icon="chevron-right" iconAlign="right"/>
+        </h:form>
+    </b:navBar>
+
+
+    <b:jumbotron>
+        <b:container>
+        <h:form>
+
+                <b:inputText id="username" value="#{loginForm.username}" label="#{msg['user']}">
+                    <f:facet name="prepend">
+                        <b:icon name="user"></b:icon>
+                    </f:facet>
+                </b:inputText>
+                <b:inputSecret id="password" value="#{loginForm.password}" label="#{msg['password']}">
+                    <f:facet name="prepend">
+                        <b:iconAwesome name="key"></b:iconAwesome>
+                    </f:facet>
+                </b:inputSecret>
+                <b:commandButton value="Submit" action="#{loginForm.post()}"/>
+        </h:form>
+        </b:container>
+    </b:jumbotron>
+</h:body>
+</f:view>
+</html>
+

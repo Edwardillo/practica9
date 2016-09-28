@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+
+    </h:head>
+    <h:body>
+        <b:navBar brand="Practica 9" brandHref="#" inverse="true" fixed="top">
+            <b:navbarLinks>
+                <b:navLink value="Link" href="#"></b:navLink>
+                <b:navLink value="Link" href="#"></b:navLink>
+                <b:dropMenu value="Dropdown">
+                    <b:navLink value="Action" href="#"></b:navLink>
+                    <b:navLink value="Another action" href="#"></b:navLink>
+                    <b:navLink value="Something else here" href="#"></b:navLink>
+                    <b:navLink></b:navLink>
+                    <b:navLink header="Nav header"></b:navLink>
+                    <b:navLink value="Separated link" href="#"></b:navLink>
+                    <b:navLink value="One more separated link" href="#"></b:navLink>
+                </b:dropMenu>
+            </b:navbarLinks>
+        </b:navBar>
+        <b:jumbotron>
+            <b:container>
+                <h:form>
+                    <br></br>
+                    <h:inputHidden id="id" value="-1"/>
+                    <b:inputText id="name" value="#{userForm.name}" label="#{msg['name']}" required="true"/>
+                    <b:message for="name"/>
+                    <b:inputText id="lastname" value="#{userForm.lastname}" label="#{msg['lastname']}" required="true"/>
+                    <b:message for="lastname"/>
+                    <b:inputText id="username" value="#{userForm.username}" label="#{msg['user']}:" required="true">
+                    <f:validator validatorId="usernameValidator"/>
+                    </b:inputText>
+                    <b:message for="username"/>
+                    <b:inputSecret id="password" value="#{userForm.password}" label="#{msg['password']}:" required="true"/>
+                    <b:message for="password"/>
+                    <b:commandButton value="Submit" action="#{userForm.post()}"/>
+                </h:form>
+
+            </b:container>
+        </b:jumbotron>
+
+
+    </h:body>
+</html>
