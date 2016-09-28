@@ -32,13 +32,13 @@
                     <b:message for="name"/>
                     <b:inputText id="lastname" value="#{userForm.lastname}" label="#{msg['lastname']}" required="true"/>
                     <b:message for="lastname"/>
-                    <b:inputText id="username" value="#{userForm.username}" label="#{msg['user']}:" required="true">
+                    <b:inputText id="username" value="#{userForm.username}" label="#{msg['user']}" required="true">
                     <f:validator validatorId="usernameValidator"/>
                     </b:inputText>
                     <b:message for="username"/>
-                    <b:inputSecret id="password" value="#{userForm.password}" label="#{msg['password']}:" required="true"/>
+                    <b:inputSecret id="password" value="#{userForm.password}" label="#{msg['password']}" required="true"/>
                     <b:message for="password"/>
-                    <b:commandButton value="Submit" action="#{userForm.post()}"/>
+                    <b:commandButton value="#{msg['submit']}" action="#{userForm.post()}"/>
                 </h:form>
 
             </b:container>

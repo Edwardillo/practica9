@@ -3,10 +3,12 @@
  */
 import javax.annotation.PostConstruct;
 
+import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ValueChangeEvent;
 import javax.inject.Named;
+import javax.servlet.ServletRequest;
 import java.io.Serializable;
 import java.util.LinkedHashMap;
 import java.util.Locale;
@@ -15,19 +17,18 @@ import java.util.Map;
 /**
  * Created by vacax on 06/09/16.
  */
-
+@ManagedBean(name = "formCambioIdioma")
 @SessionScoped
 public class FormCambioIdioma implements Serializable {
 
     String idiomaSeleccion = "en";
-
     private Map<String, Object> idiomasMap;
 
     @PostConstruct
     private void inicializar(){
         idiomasMap = new LinkedHashMap<>();
         idiomasMap.put("Español", "es"); //label, value
-        idiomasMap.put("Ingles", "en");
+        idiomasMap.put("English", "en");
 
     }
 

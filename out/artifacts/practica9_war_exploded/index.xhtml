@@ -14,16 +14,18 @@
 <h:body style="padding-top: 50px; padding-bottom: 20px;">
     <b:navBar brand="Brand" brandHref="#" inverse="true" fixed="top">
         <b:navbarLinks>
-            <h:form>
-                <h:selectOneMenu  value="#{formCambioIdioma.idiomaSeleccion}"
+
+            <h:form styleClass="navbar-form navbar-right">
+                <b:selectOneMenu  value="#{formCambioIdioma.idiomaSeleccion}"
                                   valueChangeListener="#{formCambioIdioma.cambiarIdioma}" onchange="submit();" >
                     <f:selectItems value="#{formCambioIdioma.getListaIdiomas()}" />
-                </h:selectOneMenu>
+                </b:selectOneMenu>
             </h:form>
+
         </b:navbarLinks>
         <h:form styleClass="navbar-form navbar-right">
             #{' '}
-            <b:commandButton action="/createuser" value="Register" look="success" icon="chevron-right" iconAlign="right"/>
+            <b:commandButton action="/createuser" value="#{msg['register']}" look="success" icon="chevron-right" iconAlign="right"/>
         </h:form>
     </b:navBar>
 
@@ -42,7 +44,7 @@
                         <b:iconAwesome name="key"></b:iconAwesome>
                     </f:facet>
                 </b:inputSecret>
-                <b:commandButton value="Submit" action="#{loginForm.post()}"/>
+                <b:commandButton value="#{msg['submit']}" action="#{loginForm.post()}"/>
         </h:form>
         </b:container>
     </b:jumbotron>
